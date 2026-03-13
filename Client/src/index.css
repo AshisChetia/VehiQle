@@ -1,1 +1,46 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@600;700;800&display=swap');
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-heading: 'Sora', sans-serif;
+
+  --color-primary:       #0F5132;
+  --color-primary-hover: #0a3d25;
+  --color-primary-light: #166534;
+  --color-primary-pale:  #f0fdf4;
+
+  --color-accent:      #10B981;
+  --color-accent-light:#34D399;
+  --color-accent-pale: #d1fae5;
+
+  --color-honeydew:    #F0FFF4;
+  --color-honeydew-100:#dcfce7;
+  --color-honeydew-200:#bbf7d0;
+
+  --color-danger:      #EF4444;
+  --color-danger-pale: #fef2f2;
+  --color-warning:     #F59E0B;
+  --color-warning-pale:#fffbeb;
+  --color-surface:     #FFFFFF;
+}
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+  body { background: #F8FAFC; color: #0F172A; font-family: var(--font-sans); }
+  h1,h2,h3,h4,h5,h6 { font-family: var(--font-heading); }
+  ::selection { background: #10B981; color: white; }
+}
+
+@layer utilities {
+  .glass { background: rgba(255,255,255,0.85); backdrop-filter: blur(14px); }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up { animation: fadeInUp 0.4s ease forwards; }
